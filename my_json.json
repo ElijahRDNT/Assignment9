@@ -1,0 +1,50 @@
+{
+    "full_name": "ELIJAH MAE TRESVALLES ARDIENTE",
+    "course": "COMPUTER ENGINEERING STUDENT",
+    "image": "C:/Users/lenovo/reserve/assignment9 trials/2x2.jpg",
+    "address" : [{
+        "street" : "Champ de Mars",
+        "barangay": "5 Av. Anatole France",
+        "city & country": "75007 Paris, France"
+    }],
+    
+    "contact": "09012920221",
+    "email": "coolcat@gmail.com",
+    "birthdate": "December 17, 2003",
+    "description": [{
+        "line1": "Bachelor of Science in Computer Engineering student and a STEM senior high school",
+        "line2": "graduate, passionate about software developing and machine learning. Eager to learn, ",
+        "line3": "flexible and well-organized leader and follower, proficient in programming."
+    }],
+
+    "education": [{
+        "strand": "Science, Technology, Engineering, and Mathematics",
+        "year": "2019 - 2021",
+        "address": "Jose Rizal University Shaw Blvd., Mandaluyong City"
+    },
+    {
+        "strand": "BS Computer Engineering",
+        "year": "2021 - Present",
+        "address": "Polytechnic University of the Philippines Sta. Mesa, Manila City"
+    }],
+
+    "b_info": [{
+        "Birthplace": "Antipolo City",
+        "Civil Status": "Single",
+        "Citizenship": "Filipino",
+        "Father_Name": "Steve Rogers",
+        "Occupation": "Tech Factory Manager",
+        "Mother_Name": "Park Jihyo",
+        "Occupation2": "Tailor"
+    }],
+
+    "skills": [{
+        "skill1": "Experienced with databases",
+        "skill2": "Programming (C, C++, Java, Python)",
+        "skill3": "Correlating Data and Producing Statistics",
+        "skill4": "Elasticsearch, Kibana, PDF file generation",
+        "skill5": "MS Word, PowerPoint, Internet, Excel, etc."
+    }]
+
+
+}
