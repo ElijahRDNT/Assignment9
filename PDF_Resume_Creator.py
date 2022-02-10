@@ -32,6 +32,28 @@ def create_pdf(path, obj):
     my_canvas.setFillColor(colors.HexColor("#cd853f"))      #brown color fill
     my_canvas.rect(63, 648, 104, 104, stroke=1, fill=1)     #brown rectangle border for applicant picture
     my_canvas.drawImage(str(obj["image"]), 65, 650, width=100, height=100)  #image
+
+    address = obj["address"]
+    my_canvas.setFont('Arial(Body) - Bold', 10)
+    my_canvas.setFillColor(colors.HexColor("#3d4035"))      #dark grey COLOR
+    my_canvas.rect(215, 577, 0.2, 70, stroke=0, fill=1)     #line between add and contact
+    my_canvas.rect(397, 577, 0.2, 70, stroke=0, fill=1)     #line between bday and contact
+    my_canvas.rect(209, 537, 194, 32, stroke=0, fill=1)     #1st rect center
+
+    my_canvas.drawString(110, 626, "Address") 
+    my_canvas.drawString(260, 630, "Contact")
+    my_canvas.drawString(260, 599, "E-mail")
+    my_canvas.drawString(430, 617, "Date of Birth")
+
+    my_canvas.setFont('Arial(Body)', 10)
+    my_canvas.drawString(97, 613, str(address[0]["street"]))
+    my_canvas.drawString(87, 600, str(address[0]["barangay"]))
+    my_canvas.drawString(87.5, 587, str(address[0]["city & country"]))
+
+    my_canvas.drawString(260, 617, "Phone: " + str(obj["contact"]))
+    my_canvas.drawString(260, 586, str(obj["email"]))
+    my_canvas.drawString(430, 604, str(obj["birthdate"]))
+
     my_canvas.save()
 
 
