@@ -31,6 +31,8 @@ def create_pdf(path, obj):
     my_canvas.setStrokeColor(colors.HexColor("#cd853f"))    #brown color stroke
     my_canvas.setFillColor(colors.HexColor("#cd853f"))      #brown color fill
     my_canvas.rect(63, 648, 104, 104, stroke=1, fill=1)     #brown rectangle border for applicant picture
+    my_canvas.rect(63, 555, 490, 1, stroke=1, fill=1)     #first brown horizontal line at the PROFILE SUMMARY
+    my_canvas.rect(63, 454, 490, 1, stroke=1, fill=1)       #2nd brown horizontal line at EDUCATION
     my_canvas.drawImage(str(obj["image"]), 65, 650, width=100, height=100)  #image
 
     address = obj["address"]
@@ -38,7 +40,8 @@ def create_pdf(path, obj):
     my_canvas.setFillColor(colors.HexColor("#3d4035"))      #dark grey COLOR
     my_canvas.rect(215, 577, 0.2, 70, stroke=0, fill=1)     #line between add and contact
     my_canvas.rect(397, 577, 0.2, 70, stroke=0, fill=1)     #line between bday and contact
-    my_canvas.rect(209, 537, 194, 32, stroke=0, fill=1)     #1st rect center
+    my_canvas.rect(209, 537, 194, 32, stroke=0, fill=1)     #1st rect center for PRFILE SUMMARY
+    my_canvas.rect(243, 438, 128, 32, stroke=0, fill=1)     #2nd rec center for EDUCATION
 
     my_canvas.drawString(110, 626, "Address") 
     my_canvas.drawString(260, 630, "Contact")
@@ -53,6 +56,26 @@ def create_pdf(path, obj):
     my_canvas.drawString(260, 617, "Phone: " + str(obj["contact"]))
     my_canvas.drawString(260, 586, str(obj["email"]))
     my_canvas.drawString(430, 604, str(obj["birthdate"]))
+    my_canvas.setFont('Arial(Body) - Bold', 11.5)
+    my_canvas.drawString(85, 413, "•    " + str(obj["education"][0]["strand"]))    #educ strand first bullet
+    my_canvas.drawString(85, 347, "•    " + str(obj["education"][1]["strand"]))     #educ strand 2nd bullet
+    my_canvas.setFont('Arial(Body)', 13)
+    my_canvas.drawString(67, 519, str(obj["description"][0]["line1"])) #prof summary
+    my_canvas.drawString(67, 501, str(obj["description"][0]["line2"]))  #prof summary
+    my_canvas.drawString(67, 483, str(obj["description"][0]["line3"]))  #prof summary
+
+
+    my_canvas.setFont('Arial(Body)', 11.5)
+    my_canvas.drawString(85, 395, "     " + str(obj["education"][0]["year"]))   #educ year first bullet
+    my_canvas.drawString(85, 377, "     " + str(obj["education"][0]["address"]))    #educ address first bullet
+    my_canvas.drawString(85, 329, "     " + str(obj["education"][1]["year"]))    #educ year first bullet
+    my_canvas.drawString(85, 311, "     " + str(obj["education"][1]["address"]))    #educ address second bullet
+
+
+    my_canvas.setFont('Arial(Body)', 16)
+    my_canvas.setFillColor(colors.HexColor("#fefefa"))     #white COLOR for PROFILE SUMMARY, EDUCATION
+    my_canvas.drawString(234, 547, "PROFILE SUMMARY")
+    my_canvas.drawString(260, 447, "EDUCATION")
 
     my_canvas.save()
 
